@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Stopwatch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell" aria-label="Stopwatch application">
+    <section class="stopwatch-panel">
+      <div class="top-bar">
+        <div>
+          <p class="eyebrow">Precision timer</p>
+          <h1>Stopwatch</h1>
+        </div>
+        <div class="status-pill" id="statusPill" aria-live="polite">
+          <span class="status-dot"></span>
+          Ready
+        </div>
+      </div>
+
+      <div class="time-card" aria-live="polite">
+        <div class="time-display" id="display">00:00:00.00</div>
+        <div class="time-labels" aria-hidden="true">
+          <span>Hours</span>
+          <span>Minutes</span>
+          <span>Seconds</span>
+          <span>Centisec</span>
+        </div>
+      </div>
+
+      <div class="controls" aria-label="Stopwatch controls">
+        <button class="btn primary" id="startPauseBtn" type="button">Start</button>
+        <button class="btn secondary" id="lapBtn" type="button" disabled>Lap</button>
+        <button class="btn danger" id="resetBtn" type="button" disabled>Reset</button>
+      </div>
+
+      <section class="laps-section" aria-labelledby="lapsTitle">
+        <div class="laps-header">
+          <div>
+            <p class="eyebrow">Intervals</p>
+            <h2 id="lapsTitle">Lap Times</h2>
+          </div>
+          <button class="text-btn" id="clearLapsBtn" type="button" disabled>Clear</button>
+        </div>
+
+        <ol class="lap-list" id="lapList" aria-live="polite">
+          <li class="empty-state">No laps recorded yet.</li>
+        </ol>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
